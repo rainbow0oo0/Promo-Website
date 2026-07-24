@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 1. 네이버/구글 검색엔진 최적화 (SEO) 메타태그 -->
+    <title>hometest | 서비스 홍보</title>
+    <meta name="description" content="네이버 검색 결과 요약 문구에 표시될 서비스 설명입니다.">
+    <meta name="keywords" content="홍보, 이벤트, 테스트">
+    <meta name="author" content="rainbow0oo0">
+    
+    <!-- 2. 네이버 소유확인 태그 (나중에 네이버 서치어드바이저 발급 코드 입력) -->
+    <meta name="naver-site-verification" content="여기에_발급받은_네이버_소유확인_코드_입력" />
+
+    <!-- 3. Open Graph (카카오톡, 네이버 블로그 링크 공유시 나타나는 카드) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="hometest | 서비스 홍보">
+    <meta property="og:description" content="카톡이나 메신저로 링크 공유 시 보일 요약 설명입니다.">
+    <meta property="og:image" content="https://rainbow0oo0.github.io/hometest/og-image.png">
+    <meta property="og:url" content="https://rainbow0oo0.github.io/hometest/">
+
+    <style>
+        :root {
+            --primary-color: #03c75a;
+            --bg-color: #f8f9fa;
+            --text-color: #212529;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            word-break: keep-all;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(8px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eaeaea;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .hero {
+            padding: 5rem 1.5rem 3rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            color: #111;
+            letter-spacing: -0.5px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 2rem;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 0.9rem 2.2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: transform 0.1s ease, opacity 0.2s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .cta-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .features {
+            max-width: 960px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+            text-align: center;
+            border: 1px solid #f0f0f0;
+        }
+
+        .feature-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+            color: #222;
+        }
+
+        .feature-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1.5rem;
+            background: #f1f3f5;
+            color: #6c757d;
+            font-size: 0.85rem;
+            margin-top: 5rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.75rem; }
+            .hero p { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">HOMETEST</a>
+        <a href="#contact" class="cta-btn" style="padding: 0.5rem 1rem; font-size: 0.85rem;">문의하기</a>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>비즈니스를 변화시킬<br>가장 빠르고 명확한 한 걸음</h1>
+            <p>단 몇 분 만에 경험하는 새로운 서비스. 지금 바로 오픈 이벤트를 확인해보세요.</p>
+            <button class="cta-btn" onclick="handleCTA()">지금 시작하기</button>
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <h3>🚀 압도적인 속도</h3>
+                <p>복잡한 수속 없이 즉각적인 서비스 적용과 빠르게 눈에 보이는 결과를 제공합니다.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🔒 신뢰할 수 있는 품질</h3>
+                <p>전문적인 프로세스를 통해 안정적인 품질보증과 후속 케어를 지원합니다.</p>
+            </div>
+            <div class="feature-card">
+                <h3>💡 직관적인 경험</h3>
+                <p>별도의 공부 없이 누구나 간편하게 사용할 수 있도록 최적화되어 있습니다.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <p>© 2026 HOMETEST. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function handleCTA() {
+            alert('테스트 버튼이 실행되었습니다!');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://rainbow0oo0.github.io/hometest/sitemap.xml

@@ -17,11 +17,11 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="hometest | 서비스 홍보">
     <meta property="og:description" content="카톡이나 메신저로 링크 공유 시 보일 요약 설명입니다.">
-    <meta property="og:image" content="https://rainbow0oo0.github.io/hometest/og-image.png">
-    <meta property="og:url" content="https://rainbow0oo0.github.io/hometest/">
+    <meta property="og:image" content="https://rainbow0oo0.github.io/promowebsite/og-image.png">
+    <meta property="og:url" content="https://rainbow0oo0.github.io/promowebsite/">
 
     <!-- 분리한 external CSS 연결 -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -72,13 +72,32 @@
 
         // DOM이 로드된 후 헤더와 푸터 불러오기
         window.addEventListener('DOMContentLoaded', () => {
-            loadComponent('header-container', 'header.html');
-            loadComponent('footer-container', 'footer.html');
+            loadComponent('header-container', 'components/header.html');
+            loadComponent('footer-container', 'components/footer.html');
         });
 
         function handleCTA() {
-            alert('테스트 버튼이 실행되었습니다!');
+            alert('개발중입니다!');
         }
+
+        // 개인정보처리방침 모달 제어 함수
+        function openPrivacyModal() {
+            const modal = document.getElementById('privacyModal');
+            if (modal) modal.style.display = 'flex';
+        }
+
+        function closePrivacyModal() {
+            const modal = document.getElementById('privacyModal');
+            if (modal) modal.style.display = 'none';
+        }
+
+        // 모달 바깥 클릭 시 닫기
+        window.addEventListener('click', function(event) {
+            const modal = document.getElementById('privacyModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
     </script>
 </body>
 </html>

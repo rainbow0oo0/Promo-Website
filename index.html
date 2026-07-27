@@ -4,24 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- 1. 기본 SEO 메타태그 -->
-    <title>Promo Website | 비즈니스를 변화시키는 서비스</title>
-    <meta name="description" content="단 몇 분 만에 경험하는 새로운 서비스. 지금 바로 오픈 이벤트를 확인해보세요.">
-    <meta name="keywords" content="홍보, 이벤트, 서비스, 프로모션">
+    <!-- 1. SEO 메타태그 -->
+    <title>Promo Website | 세미나 & 프레젠테이션</title>
+    <meta name="description" content="최신 기술 세미나 및 프로모션 안내 게시판입니다.">
+    <meta name="keywords" content="세미나, 프로모션, 개발, 컨퍼런스">
     <meta name="author" content="rainbow0oo0">
-    
-    <!-- 2. 네이버 소유확인 태그(발급 전)
-    <meta name="naver-site-verification" content="여기에_발급받은_네이버_소유확인_코드_입력" />
-    -->
 
-    <!-- 3. Open Graph -->
+    <!-- 2. Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Promo Website | 비즈니스를 변화시키는 서비스">
-    <meta property="og:description" content="단 몇 분 만에 경험하는 새로운 서비스. 지금 바로 오픈 이벤트를 확인해보세요.">
-    <meta property="og:image" content="https://rainbow0oo0.github.io/promowebsite/og-image.png">
+    <meta property="og:title" content="Promo Website | 세미나 홍보">
+    <meta property="og:description" content="최신 세미나 일정 및 문의 안내입니다.">
+    <meta property="og:image" content="https://rainbow0oo0.github.io/promowebsite/images/logo.png">
     <meta property="og:url" content="https://rainbow0oo0.github.io/promowebsite/">
 
-    <!-- 분리한 external CSS 연결 -->
+    <!-- external CSS 연결 -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -29,34 +25,87 @@
     <!-- 외부 header.html이 들어올 위치 -->
     <div id="header-container"></div>
 
-    <main>
-        <section class="hero">
-            <h1>비즈니스를 변화시킬<br>가장 빠르고 명확한 한 걸음</h1>
-            <p>단 몇 분 만에 경험하는 새로운 서비스. 지금 바로 오픈 이벤트를 확인해보세요.</p>
-            <button class="cta-btn" onclick="handleCTA()">지금 시작하기</button>
+    <!-- ☰ 사이드바 토글 버튼 (메인 화면 좌측 상단 고정 또는 헤더에 배치) -->
+    <button class="sidebar-open-btn" onclick="toggleSidebar()">☰ 메뉴</button>
+
+    <!-- 👈 왼쪽 사이드바 (소개, 문의 등 링크 목록) -->
+    <aside id="sidebar" class="sidebar">
+        <button class="sidebar-close-btn" onclick="toggleSidebar()">✕</button>
+        <div class="sidebar-content">
+            <h3>메뉴</h3>
+            <nav class="sidebar-nav">
+                <a href="index.html">🏠 홈 (세미나 목록)</a>
+                <a href="pages/about.html">💡 세미나 소개</a>
+                <a href="pages/contact.html">✉️ 참가 및 제휴 문의</a>
+            </nav>
+        </div>
+    </aside>
+    <!-- 사이드바 열렸을 때 배경 어둡게 처리하는 오버레이 -->
+    <div id="sidebarOverlay" class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+    <!-- 📢 메인 콘텐츠 영역 (세미나 홍보 게시판) -->
+    <main class="main-container">
+        
+        <!-- 히어로 섹션 -->
+        <section class="hero-section">
+            <h1>2026 IT & 개발 세미나 게시판</h1>
+            <p>다양한 기술 세미나 정보를 한눈에 확인하고 참가해 보세요.</p>
         </section>
 
-        <section class="features">
-            <div class="feature-card">
-                <h3>🚀 압도적인 속도</h3>
-                <p>복잡한 수속 없이 즉각적인 서비스 적용과 빠르게 눈에 보이는 결과를 제공합니다.</p>
-            </div>
-            <div class="feature-card">
-                <h3>🔒 신뢰할 수 있는 품질</h3>
-                <p>전문적인 프로세스를 통해 안정적인 품질보증과 후속 케어를 지원합니다.</p>
-            </div>
-            <div class="feature-card">
-                <h3>💡 직관적인 경험</h3>
-                <p>별도의 공부 없이 누구나 간편하게 사용할 수 있도록 최적화되어 있습니다.</p>
-            </div>
+        <!-- 세미나 카드/사진 홍보 갤러리 -->
+        <section class="seminar-grid">
+            
+            <!-- 세미나 카드 1 -->
+            <article class="seminar-card">
+                <div class="card-image-wrap">
+                    <img src="images/logo.png" alt="세미나 1 이미지" class="card-img">
+                    <span class="badge upcoming">모집중</span>
+                </div>
+                <div class="card-content">
+                    <span class="seminar-date">2026.08.15 (토) 14:00</span>
+                    <h3>웹 개발 아키텍처 모듈화 세미나</h3>
+                    <p>유지보수가 쉬운 프런트엔드 구조 설계 및 모듈화 기법에 관해 다룹니다.</p>
+                    <a href="pages/about.html" class="card-btn">상세보기</a>
+                </div>
+            </article>
+
+            <!-- 세미나 카드 2 -->
+            <article class="seminar-card">
+                <div class="card-image-wrap">
+                    <img src="images/logo.png" alt="세미나 2 이미지" class="card-img">
+                    <span class="badge upcoming">모집중</span>
+                </div>
+                <div class="card-content">
+                    <span class="seminar-date">2026.09.01 (화) 19:00</span>
+                    <h3>클라우드 네이티브 배포 실전</h3>
+                    <p>Docker와 GitHub Pages를 활용한 효율적인 정적 배포 파이프라인 수립 가이드.</p>
+                    <a href="pages/about.html" class="card-btn">상세보기</a>
+                </div>
+            </article>
+
+            <!-- 세미나 카드 3 -->
+            <article class="seminar-card">
+                <div class="card-image-wrap">
+                    <img src="images/logo.png" alt="세미나 3 이미지" class="card-img">
+                    <span class="badge closed">마감</span>
+                </div>
+                <div class="card-content">
+                    <span class="seminar-date">2026.07.10 (금) 15:00</span>
+                    <h3>SEO 최적화 및 메타태그 구성</h3>
+                    <p>검색엔진 노출을 끌어올리기 위한 Open Graph 세팅과 표준 HTML 구조화법.</p>
+                    <a href="pages/contact.html" class="card-btn secondary">문의하기</a>
+                </div>
+            </article>
+
         </section>
     </main>
 
     <!-- 외부 footer.html이 들어올 위치 -->
     <div id="footer-container"></div>
 
+    <!-- JavaScript 로직 -->
     <script>
-        // 외부 Component 불러오기 함수
+        // 외부 Component (헤더, 푸터) 로더
         async function loadComponent(elementId, filePath) {
             try {
                 const response = await fetch(filePath);
@@ -71,17 +120,22 @@
             }
         }
 
-        // DOM이 로드된 후 헤더와 푸터 불러오기
+        // DOM 로드 완료 후 실행
         window.addEventListener('DOMContentLoaded', () => {
             loadComponent('header-container', 'components/header.html');
             loadComponent('footer-container', 'components/footer.html');
         });
 
-        function handleCTA() {
-            alert('개발중입니다!');
+        // 👈 사이드바 열기/닫기 토글 함수
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebarOverlay');
+            
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
         }
 
-        // 개인정보처리방침 모달 제어 함수
+        // 푸터 내 개인정보처리방침 모달 함수
         function openPrivacyModal() {
             const modal = document.getElementById('privacyModal');
             if (modal) modal.style.display = 'flex';
@@ -92,7 +146,7 @@
             if (modal) modal.style.display = 'none';
         }
 
-        // 모달 바깥 클릭 시 닫기
+        // 외부 모달 바깥 클릭 시 닫기
         window.addEventListener('click', function(event) {
             const modal = document.getElementById('privacyModal');
             if (event.target === modal) {

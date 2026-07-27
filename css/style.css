@@ -55,41 +55,184 @@ body {
 
 .cta-btn:hover {
     opacity: 0.9;
-    transform: translateY(-1px);
+    transform: translateY(-1px);/* ==========================================
+   사이드바 (Drawer Menu) 스타일
+   ========================================== */
+.sidebar-open-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 900;
+    padding: 10px 16px;
+    background-color: #212529;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-.features {
-    max-width: 960px;
-    margin: 2rem auto;
-    padding: 0 1.5rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.5rem;
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -280px; /* 초기 위치: 화면 왼쪽 밖에 숨김 */
+    width: 280px;
+    height: 100vh;
+    background-color: #ffffff;
+    box-shadow: 2px 0 12px rgba(0,0,0,0.15);
+    z-index: 1001;
+    transition: left 0.3s ease; /* 부드럽게 미끄러지듯 등장 */
+    padding: 2rem 1.5rem;
 }
 
-.feature-card {
-    background: var(--card-bg);
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
-    text-align: center;
-    border: 1px solid #f0f0f0;
+.sidebar.active {
+    left: 0; /* 화면으로 슬라이드 인 */
 }
 
-.feature-card h3 {
+.sidebar-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
     font-size: 1.2rem;
-    margin-bottom: 0.75rem;
-    color: #222;
+    cursor: pointer;
+    color: #495057;
 }
 
-.feature-card p {
-    color: #666;
-    font-size: 0.95rem;
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
 }
 
-@media (max-width: 768px) {
-    .hero h1 { font-size: 1.75rem; }
-    .hero p { font-size: 1rem; }
+.sidebar-nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 6px;
+    transition: background 0.2s;
+}
+
+.sidebar-nav a:hover {
+    background-color: #f1f3f5;
+    color: #03c75a;
+}
+
+/* 어두운 배경 오버레이 */
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+}
+
+.sidebar-overlay.active {
+    display: block;
+}
+
+/* ==========================================
+   세미나 게시판 갤러리 레이아웃
+   ========================================== */
+.main-container {
+    max-width: 1100px;
+    margin: 4rem auto 2rem;
+    padding: 0 1.5rem;
+}
+
+.hero-section {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.seminar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.seminar-card {
+    background: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+}
+
+.seminar-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-image-wrap {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    background-color: #f8f9fa;
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.badge.upcoming { background-color: #03c75a; }
+.badge.closed { background-color: #868e96; }
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.seminar-date {
+    font-size: 0.8rem;
+    color: #868e96;
+}
+
+.card-content h3 {
+    margin: 0.5rem 0;
+    font-size: 1.15rem;
+    color: #212529;
+}
+
+.card-content p {
+    font-size: 0.9rem;
+    color: #495057;
+    line-height: 1.5;
+    margin-bottom: 1.2rem;
+}
+
+.card-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #03c75a;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.card-btn.secondary {
+    background-color: #495057;
 }
 
 
